@@ -66,8 +66,8 @@ DATA DO TERMINO - 19/02/2024
 
 
     ATUALIZAÇÔES 
-    20/02/2024 - Função da mensagem de erro passou a ter um parâmetro para ser reatualizada. Agora ela não apenas invalida os campos originais de números e acentos,
-    mas também quando o valor do input é um valor vazio.
+    20/02/2024 - Função da mensagem de erro passou a ter um parâmetro para ser reutilizada. Agora ela não apenas invalida os campos originais de números e acentos,
+    mas também quando o valor do input é um valor vazio. Outros problemas que a adição dessa função trouxe também já foram corrigidos
 
 
 ------------------------------------------------------------------------------------------------
