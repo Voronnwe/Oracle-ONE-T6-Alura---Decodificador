@@ -94,6 +94,7 @@ function limparCampo() {
 // Função Mensagem de Erro
 
 function exibirErro(mensagemErro) {
+  i = 0
   clearInterval(intervalo);
   audio.pause();
   limparCampo();
