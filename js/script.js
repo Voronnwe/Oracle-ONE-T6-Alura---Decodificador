@@ -1,5 +1,12 @@
 
-// Função do Audio 
+const textoInicial = "Bom, você está dentro. Apenas lembre-se de que os agêntes estão sempre de olho. Precisamos ser cuidadosos, portanto daqui em diante usaremos essa interface para nos comunicar. Ela garantirá a segurança em nossas mensagems. Qualquer dúvida procure o Tank..."
+const textContainer = document.querySelector(".boxArea");
+let i = 0;
+let intervalo;
+let exibicaoInicialFeita = false;
+
+
+// Função Audio 
 
 const audio = new createAudio();
 
@@ -25,7 +32,7 @@ function createAudio() {
 
 document.getElementById('redPillButton').addEventListener('click', function() {
   document.getElementById('maskPage').style.display = 'none';
-  intervalo = setInterval(exibirLetraPorLetra, 120);
+  intervalo = setInterval(() => exibirLetraPorLetra(textoInicial), 120);
   audio.play();
   });
 
@@ -40,32 +47,9 @@ botao.addEventListener('click', function() {
 });
 
 
-// Função de Exibir Letra por Letra
+// Função Exibir Letra por Letra
 
-const textoInicial = 
-"Bom, você está dentro. Apenas lembre-se de que os agêntes estão sempre de olho. Precisamos ser cuidadosos, portanto daqui em diante usaremos essa interface para nos comunicar. Ela garantirá a segurança em nossas mensagems. Qualquer dúvida procure o Tank..."
-
-let i = 0;
-let intervalo;
-
-function exibirLetraPorLetra() {
-  const textContainer = document.querySelector(".boxArea");
-  textContainer.textContent += textoInicial[i];
-  i++;
-
-  if (i === textoInicial.length) {
-    clearInterval(intervalo);
-    audio.pause();
-    i = 0;
-    setTimeout(() => {
-      textContainer.textContent = "Aguardando nova mensagem...";
-      textContainer.classList.add("message"); 
-  }, 3000);
-  }
-}
-
-function exibirLetraPorLetraInput(textoInput) {
-  const textContainer = document.querySelector(".boxArea");
+function exibirLetraPorLetra(textoInput) {
   textContainer.textContent += textoInput[i];
   i++;
 
@@ -73,11 +57,20 @@ function exibirLetraPorLetraInput(textoInput) {
     clearInterval(intervalo);
     audio.pause();
     i = 0;
+
+    if (!exibicaoInicialFeita) {
+      exibicaoInicialFeita = true; 
+      setTimeout(() => {
+        textContainer.textContent = "Aguardando nova mensagem...";
+        textContainer.classList.add("message");
+      }, 3000);
+    }
   }
 }
 
 
 // Função Letras Minusculas
+
 function transformarParaMinusculas(input) {
   input.value = input.value.toLowerCase(); 
 }
@@ -94,17 +87,21 @@ function limparCampo() {
 // Função Mensagem de Erro
 
 function exibirErro(mensagemErro) {
+
   clearInterval(intervalo);
   audio.pause();
   limparCampo();
-  const textContainer = document.querySelector(".boxArea");
+
   textContainer.textContent = mensagemErro
   textContainer.classList.add("errorMessage"); 
+
   setTimeout(() => {
     textContainer.textContent = "Aguardando nova mensagem...";
     textContainer.classList.remove("errorMessage");
 }, 4000);
 textContainer.classList.add("message");
+
+exibicaoInicialFeita = true;
 }
 
 
@@ -113,9 +110,10 @@ textContainer.classList.add("message");
 let mensagemCriptografada
 
 function cripitografarMensagem() {
+  i = 0
   clearInterval(intervalo);
   let mensagemOriginal = document.getElementById("digiteTexto").value;
-
+  
   if (mensagemOriginal.trim() === "") {
     exibirErro("Campo vazio. Por favor, insira uma mensagem.");
     return;
@@ -127,11 +125,11 @@ function cripitografarMensagem() {
 
   mensagemCriptografada = substituirVogais(mensagemOriginal);
 
-  const textContainer = document.querySelector(".boxArea");
   textContainer.textContent = "";
   audio.play()
   textContainer.classList.remove("message");
-  intervalo = setInterval(() => exibirLetraPorLetraInput(mensagemCriptografada), 120);
+
+  intervalo = setInterval(() => exibirLetraPorLetra(mensagemCriptografada), 120);
   limparCampo();
 }
 function substituirVogais(texto) {
@@ -146,6 +144,7 @@ function substituirVogais(texto) {
 let mensagemDescriptografada;
 
 function descriptografarMensagem() {
+  i = 0
   clearInterval(intervalo);
   let mensagemOriginal = document.getElementById("digiteTexto").value;
 
@@ -160,11 +159,11 @@ function descriptografarMensagem() {
 
   mensagemDescriptografada = reSubstituirVogais(mensagemOriginal);
 
-  const textContainer = document.querySelector(".boxArea");
   textContainer.textContent = "";
   audio.play()
   textContainer.classList.remove("message");
-  intervalo = setInterval(() => exibirLetraPorLetraInput(mensagemDescriptografada), 120);
+
+  intervalo = setInterval(() => exibirLetraPorLetra(mensagemDescriptografada), 120);
   limparCampo();
 }
 function reSubstituirVogais(texto) {
