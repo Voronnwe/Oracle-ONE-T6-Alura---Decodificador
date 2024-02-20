@@ -58,6 +58,7 @@ ALÉM, gostaria de deixar um muito obrigado (além de um S2) ao Gean (https://gi
 Muito Obrigado santa e paciente alma que fora atormentada por mim!
 
 ------------------------------------------------------------------------------------------------
+Site pode ser acessado -> https://voronnwe.github.io/Oracle-ONE-T6-Alura---Decodificador/
 
 DATA DO TERMINO - 19/02/2024
 
