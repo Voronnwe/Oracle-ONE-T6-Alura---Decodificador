@@ -93,12 +93,12 @@ function limparCampo() {
 
 // Função Mensagem de Erro
 
-function exibirErro() {
+function exibirErro(mensagemErro) {
   clearInterval(intervalo);
   audio.pause();
   limparCampo();
   const textContainer = document.querySelector(".boxArea");
-  textContainer.textContent = "Não utilize números ou caracteres acentuados";
+  textContainer.textContent = mensagemErro
   textContainer.classList.add("errorMessage"); 
   setTimeout(() => {
     textContainer.textContent = "Aguardando nova mensagem...";
@@ -116,8 +116,12 @@ function cripitografarMensagem() {
   clearInterval(intervalo);
   let mensagemOriginal = document.getElementById("digiteTexto").value;
 
+  if (mensagemOriginal.trim() === "") { // Verificar se o campo está vazio
+    exibirErro("Campo vazio. Por favor, insira uma mensagem.");
+    return;
+  }
   if (/[A-ZÀ-Úà-ú0-9]/.test(mensagemOriginal)) {
-    exibirErro();
+    exibirErro("Não utilize números ou caracteres acentuados");
     return;
   }
 
@@ -145,8 +149,12 @@ function descriptografarMensagem() {
   clearInterval(intervalo);
   let mensagemOriginal = document.getElementById("digiteTexto").value;
 
+  if (mensagemOriginal.trim() === "") { // Verificar se o campo está vazio
+    exibirErro("Campo vazio. Por favor, insira uma mensagem.");
+    return;
+  }
   if (/[A-ZÀ-Úà-ú0-9]/.test(mensagemOriginal)) {
-    exibirErro();
+    exibirErro("Não utilize números ou caracteres acentuados");
     return;
   }
 
