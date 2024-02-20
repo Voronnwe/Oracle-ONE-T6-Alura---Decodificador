@@ -116,7 +116,7 @@ function cripitografarMensagem() {
   clearInterval(intervalo);
   let mensagemOriginal = document.getElementById("digiteTexto").value;
 
-  if (mensagemOriginal.trim() === "") { // Verificar se o campo está vazio
+  if (mensagemOriginal.trim() === "") { 
     exibirErro("Campo vazio. Por favor, insira uma mensagem.");
     return;
   }
@@ -149,7 +149,7 @@ function descriptografarMensagem() {
   clearInterval(intervalo);
   let mensagemOriginal = document.getElementById("digiteTexto").value;
 
-  if (mensagemOriginal.trim() === "") { // Verificar se o campo está vazio
+  if (mensagemOriginal.trim() === "") { 
     exibirErro("Campo vazio. Por favor, insira uma mensagem.");
     return;
   }
