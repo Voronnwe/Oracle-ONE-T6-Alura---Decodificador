@@ -7,13 +7,15 @@ Zero segredo.
 
 -- NOTAS DE ESCLARECIMENTO --
 
-1. Existem alguns pequenos bugs principalmente quando o usuário não deixa a mensagem inicial ocorrer de forma adequada. Os bugs não costumam quebrar a página por completo, apenas agarrar em algumas criptografias e/ou descriptografias. Alguns desses erros foram identificados e corrigidos, outros nem tanto. Mas, no geral, a funcionalidade é fluida. Apenas quando o usuário abusa que as coisas podem ficar complicas.
+1. Navegadores diferentes podem apresentar performances e bugs diferentes. Inclusive vale ressaltar que, as vezes, o FireFox pode não carregar muito bem as máscaras/modais e, principalmente, a fonte, por intermédio de bloqueio do GitHub.
 
-2. Sobre "abusos de usuários", se a palavra inicial  for muito grande ela vai quebrar a margem da box. A opção seria quebrar toda a palavra, mas achei que ficava muito estranho quebrar palavras de forma incorreta de nossa normal culta, então optei por deixar assim. Se você é um usuário que digita "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" parabéns, você é um troll!
+2. Existem alguns pequenos bugs principalmente quando o usuário não deixa a mensagem inicial ocorrer de forma adequada. Os bugs não costumam quebrar a página por completo, apenas agarrar em algumas criptografias e/ou descriptografias. Alguns desses erros foram identificados e corrigidos, outros nem tanto. Mas, no geral, a funcionalidade é fluida. Apenas quando o usuário abusa que as coisas podem ficar complicas.
 
-3. Tenho certeza de que existem melhores, modificações e principalmente otimizações que poderiam ser feitas, mas no geral estou bem satisfeito com o resultado final.
+3. Sobre "abusos de usuários", se a palavra inicial  for muito grande ela vai quebrar a margem da box. A opção seria quebrar toda a palavra, mas achei que ficava muito estranho quebrar palavras de forma incorreta de nossa normal culta, então optei por deixar assim. Se você é um usuário que digita "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" parabéns, você é um troll!
 
-4. A função "transformarParaMinusculas(input)" foi adiciona por um erro quando se usa navegadores diferentes. Pelo FireFox (navegador que uso na maior parte das vezes) não era necessário adicionar essa função.
+4. Tenho certeza de que existem melhores, modificações e principalmente otimizações que poderiam ser feitas, mas no geral estou bem satisfeito com o resultado final.
+
+5. A função "transformarParaMinusculas(input)" foi adiciona por um erro quando se usa navegadores diferentes. Pelo FireFox (navegador que uso na maior parte das vezes) não era necessário adicionar essa função.
 
 ------------------------------------------------------------------------------------------------
 
