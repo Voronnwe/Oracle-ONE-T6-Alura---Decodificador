@@ -1,0 +1,326 @@
+@import url('http://fonts.cdnfonts.com/css/matrix');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.2rem;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+:root {
+    --fonte-principal: 'Matrix', 'sans-serif';
+
+    --cor-borda: 1px solid #AEE5C0;
+    --cor-background: #1a4328;
+    --cor-texto: #fff;
+    --cor-escolhaMascara: #1fca58;
+    --cor-alertaErro: #af0808;
+}
+
+
+/* Elementos da máscara da tela de abertura */
+
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background: url('./img/matrix\ gif.gif');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    text-transform: uppercase;
+    font-family: var(--fonte-principal);
+    color: var(--cor-escolhaMascara);
+}
+h2 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.maskMensage {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4%;
+}
+.maskPill {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    padding: 48px;
+}
+.bluePill,
+.redPill {
+    background: transparent;
+    border: none;
+    transition: transform 1.6s;
+    opacity: 92%;
+    position: relative;
+    font-family: var(--fonte-principal);
+    text-transform: uppercase;  
+}
+.bluePill:hover,
+.redPill:hover {
+    transform: scale(1.25);
+    cursor: pointer;
+}
+.nao,
+.sim {
+   
+    font-size: 24px;
+    color: var(--cor-escolhaMascara);
+}
+
+
+/* Elementos da máscara da tela da escolha azul */
+
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./img/matrix\ gif.gif');  
+}
+
+  .modalContent {
+    display: flex;
+    justify-content: center;
+    margin: 15%;
+    color: var(--cor-alertaErro);
+    text-transform: uppercase;
+    font-family: var(--fonte-principal);
+  }
+  .size {
+    font-size: 36px;
+}
+
+
+/* Elementos do HTML principal */
+
+body {
+    background-image: url('./img/matrix\ gif.gif');
+    background-color: #000000;
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 40px;
+}
+
+.main {
+    display: grid;
+    align-content: space-between;
+}
+
+.textLocal input {
+    width: 660px;
+    height: 42px;
+    border-radius: 8px;
+    font-size: 22px;
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-background);
+    border: var(--cor-borda);
+    opacity: 70%;
+    color: var(--cor-texto);
+}
+.title {
+    text-transform: uppercase;
+    font-size: 42px;
+    opacity: 95%;
+    color: #c5c5c5;
+    margin-top: 20px; 
+}
+strong {
+    text-transform: uppercase;
+    color: #619c75;
+    font-size: 46px;
+    animation: pulseStrong 4s infinite alternate;
+}
+@keyframes pulseStrong {
+    0% {
+        color: #619c75;   
+    }
+    100% {
+        color: #0b3c1b; 
+    }
+}
+
+.localTexto {
+    margin-bottom: 50px;
+    padding: 15px;
+    width: 370px;
+    height: 550px;
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+.boxArea {
+    display: grid;
+    align-content: center;
+    border: var(--cor-borda);
+    border-radius: 32px;
+    width: 380px;
+    height: 740px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    box-sizing: border-box;
+    color: #80ba93;
+    text-transform: uppercase;
+}
+.boxArea.message {
+    animation: pulseMessage 2s infinite alternate
+}
+@keyframes pulseMessage {
+    0% {
+        color: #80ba93;   
+    }
+    100% {
+        color: #136831; 
+    }
+}
+.boxArea.errorMessage {
+    color: var(--cor-alertaErro); 
+    animation: pulseAlert 1s infinite alternate
+}
+@keyframes pulseAlert {
+    0% {
+        color: #670404;   
+    }
+    100% {
+        color: #e30b0b; 
+    }
+}
+
+.localTexto {
+    padding: 15px;
+    width: 370px;
+    height: 550px;
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+.notification {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    text-transform: uppercase;
+    opacity: 90%;
+    margin: 10px;
+}
+.alertColor {
+    color: var(--cor-alertaErro);
+    font-size: 22px;
+    animation: none;
+}
+
+.boxButton {
+    display: flex;
+    padding: 24px;
+}
+.buttonCriptografar,
+.buttonDescriptografar {
+    width: 300px;
+    height: 62px;
+    border: var(--cor-borda);
+    border-radius: 18px;
+    background-color: #0E1015;
+    color: var(--cor-texto);
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-family: var(--fonte-principal);
+    opacity: 80%;
+    cursor: pointer;
+}
+.buttonCriptografar {
+    background-color: var(--cor-background);;
+}
+.buttonCriptografar > p,
+.buttonDescriptografar > p  {
+    transition: transform 1s;
+}
+.buttonCriptografar:hover > p,
+.buttonDescriptografar:hover > p {
+    transform: scale(1.40);
+    animation: pulse 1s infinite alternate
+}
+@keyframes pulse {
+    0% {
+        color: #fff;   
+    }
+    100% {
+        color: #347a4b; 
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--cor-background);;
+    padding: 12px;
+    border: var(--cor-borda);
+    border-radius: 14px;
+    opacity: 80%;
+    width: 80%;
+    margin: 0 auto;
+}
+p {
+    font-size: 18px;
+    opacity: 1;
+}
+a {
+    color: #fff;
+    font-size: 18px;
+}
+
+
+/* Elementos do Media Query */
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+
+    .container {
+        flex-direction: column; 
+        padding: 20px; 
+    }
+
+    .main {
+        grid-template-columns: 1fr; 
+    }
+
+    .textLocal input {
+        width: 100%; 
+    }
+    .boxArea {
+        width: 100%
+    }
+
+    .boxButton {
+        flex-direction: column; 
+        gap: 10px; 
+        padding: 4%; 
+    }
+    .buttonCriptografar,
+    .buttonDescriptografar {
+        width: 100%; 
+    }
+
+    footer {
+        display: none;
+    }
+}
+}

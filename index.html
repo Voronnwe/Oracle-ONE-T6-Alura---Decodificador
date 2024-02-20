@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle ONE-T6 | Alura - Decodificador</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <div id="maskPage" class="mask">
+        <div class="maskMensage">
+            <h2>Toda a história sempre começa com uma escolha.</h2>
+            <br>
+            <h2>Faça a sua...</h2>
+                <div class="maskPill">
+                    <button id="bluePillButton" class="bluePill">
+                        <img src="./style/img/Blue Pill.png" alt="Blue Pill">
+                        <p class="nao">Não siga Alice</p>
+                    </button>
+                    <button onclick="" id="redPillButton" class="redPill">
+                        <img src="./style/img/Red Pill.png" alt="Red Pill">
+                        <p class="sim">Siga Alice</p>
+                    </button>
+                </div>
+        </div>
+    </div>
+
+    <div id="modalPage" class="modal">
+        <div class="modalContent">
+            <h3 class="size">Parece que você ainda não está preprado para acordar...</h3>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="mainContent" class="main">
+            <h1 id="titleDecodificar" class="title">De.<Strong>cod</Strong>.ific.<Strong>a</Strong>.do.<Strong>r</Strong></h1>
+            <div class="textLocal">
+                <input type="text" id="digiteTexto" onchange="transformarParaMinusculas(this)"  placeholder="Digite seu texto...">
+            </div>
+            <div class="boxButton">
+                <div>
+                    <p class="notification">Apenas use <strong class="alertColor">letras</strong>
+                        e sem acentos</p>
+
+                    <button type="submit" onclick="cripitografarMensagem()"
+                        class="buttonCriptografar"><p>Criptografar</p></button>
+
+                    <button type="submit" onclick="descriptografarMensagem()"
+                        class="buttonDescriptografar"><p>Descriptografar</p></button>
+                </div>
+            </div>
+        </section>
+        <div>
+            <div id="area" class="boxArea">
+                <div id="areaDecodificacao" class="localTexto"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Criado, desenvolvido e estilizado por <a href="https://github.com/Voronnwe">Glauco Vasconcellos</a>. Todas as demais referências de modelos bases, parceiros e copyright podem ser encontrados no README.md
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
