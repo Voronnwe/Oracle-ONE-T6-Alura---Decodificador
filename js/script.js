@@ -113,6 +113,7 @@ textContainer.classList.add("message");
 let mensagemCriptografada
 
 function cripitografarMensagem() {
+  i = 0
   clearInterval(intervalo);
   let mensagemOriginal = document.getElementById("digiteTexto").value;
 
@@ -146,6 +147,7 @@ function substituirVogais(texto) {
 let mensagemDescriptografada;
 
 function descriptografarMensagem() {
+  i = 0
   clearInterval(intervalo);
   let mensagemOriginal = document.getElementById("digiteTexto").value;
 
